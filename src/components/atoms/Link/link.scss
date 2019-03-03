@@ -1,0 +1,16 @@
+@import "~styles/_mixins.scss";
+@import "~styles/_colours.scss";
+@import "~styles/_variables.scss";
+
+.action__link:hover {
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+.action__link {
+  color: $blue-dark;
+  &--large {
+
+  }
+}
+

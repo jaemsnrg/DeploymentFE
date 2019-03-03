@@ -1,0 +1,43 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$widescreen-width: 1440px;
+
+
+@mixin atTablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+/* and (max-width: #{$desktop-width - 1px}) - if you'd like to set an upper bound on tablet media query */
+@mixin atDesktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin atWidescreen {
+  @media (min-width: #{$widescreen-width}) {
+    @content;
+  }
+}
+
+/*This is for the Mobile Menu Landscape Fixes for text__ styles*/
+@mixin atMobileLandscape {
+  @media (orientation: landscape){
+    @content;
+  }
+}
+@mixin atTabletLandscape {
+  @media (orientation: landscape) and (min-height: 768px){
+    @content;
+  }
+}
+
+@mixin simpleGradient($start-colour, $end-colour, $start-colour-end: 48%, $end-colour-start: 63%) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f5f5f5+63,f5f5f5+100 */
+  background: $start-colour; /* Old browsers */
+  background: -moz-linear-gradient(top, $start-colour 0%, $start-colour $start-colour-end, $end-colour $end-colour-start, $end-colour 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $start-colour 0%, $start-colour $start-colour-end, $end-colour $end-colour-start, $end-colour 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $start-colour 0%, $start-colour $start-colour-end, $end-colour $end-colour-start, $end-colour 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start-colour}', endColorstr='#{$end-colour}',GradientType=0 ); /* IE6-9 */
+}

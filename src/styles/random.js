@@ -1,0 +1,1 @@
+export const random = () => 'This is our random export';
